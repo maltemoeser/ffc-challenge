@@ -1,12 +1,11 @@
 require(data.table)
-setwd("~/Lectures/COS424/homework2/imputation")
+
+# Set working directory
+setwd("~/Code/ffc-challenge/impute/")
 
 # import data
 d <- fread("../data/background.csv")
-train <- fread("../data/train.csv")
-
 setkeyv(d, "challengeID")
-setkeyv(train, "challengeID")
 
 # remove IDs
 noIds <- c("idnum", "mothid4", "fathid4", "fathid3", "mothid3", "fathid2", "mothid2", "fathid1", "mothid1")
@@ -46,9 +45,6 @@ d <- merge(d, refuse, all=TRUE)
 
 # convert NA codes into real NA
 d[d < 0] <- NA
-d$hv5_ppvtpr[d$hv5_ppvtpr == "Other"] <- NA
-d$hv5_wj9pr[d$hv5_wj9pr == "Other"] <- NA
-d$hv5_wj10pr[d$hv5_wj10pr == "Other"] <- NA
 
 # remove all-NA columns
 allNa <- colnames(d)[unlist(lapply(d, function(x) all(is.na(x))))]
@@ -88,4 +84,4 @@ corTooLarge <- apply(cm, 2, function(x) any(abs(x) > 0.6))
 d[, (names(corTooLarge[corTooLarge == TRUE])):=NULL]
 rm(cm)
 
-write.csv(d, file = "imputed-large.csv", row.names = F)
+write.csv(d, file = "../data/imputed.csv", row.names = F)
