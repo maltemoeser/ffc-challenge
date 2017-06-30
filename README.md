@@ -1,5 +1,7 @@
 # Fragile Families Challenge in Python
 
+This is an updated version of our [initial submission](https://github.com/fragilefamilieschallenge/open-source-submissions/tree/master/samantha_malte%20-%2050%20submission) to the Fragile Families Challenge.
+
 ## Setup
 
 - Clone this repository
