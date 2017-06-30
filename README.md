@@ -1,6 +1,9 @@
 # Fragile Families Challenge in Python
 
 This is an updated version of our [initial submission](https://github.com/fragilefamilieschallenge/open-source-submissions/tree/master/samantha_malte%20-%2050%20submission) to the Fragile Families Challenge.
+It is mostly written in Python, though the imputation script is written in R.
+
+See [maltemoeser/ffc-R](https://github.com/maltemoeser/ffc-R) for an example using R only.
 
 ## Setup
 
