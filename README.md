@@ -6,6 +6,10 @@
 - Create a new virtual python environment: `virtualenv --python=/usr/bin/python2.7 venv`
 - Activate the virtualenv: `source venv/bin/activate`
 - Install requirements: `pip install -r requirements.txt`
+- Add missing directories:
+  - `logs`
+  - `predictions`
+  - `data` (put the FFC data files here)
 
 ## Data
 
