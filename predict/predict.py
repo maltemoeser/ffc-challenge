@@ -102,9 +102,9 @@ def run_all():
     d = [LassoDataImporter(), ElasticNetDataImporter(), FullDataImporter()] # RfeDataImporter(),
 
     for data in d:
-        #random_forrest(data)
-        #linear(data)
-        xgboost(data)
+        random_forrest(data)
+        linear(data)
+        # xgboost(data)
         # svm_hyperparameter(data)
         # basic_svm(data)
         # gaussian_process(data)
