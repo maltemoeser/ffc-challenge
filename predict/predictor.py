@@ -13,8 +13,8 @@ class Predictor(object):
         """
         self.regressor = regressor
         self.classifier = classifier
-        self.ext = ext
         self.data = data
+        self.ext = ext
 
         self.regression_features = ["gpa", "grit", "materialHardship"]
         self.classification_features = ["eviction", "layoff", "jobTraining"]

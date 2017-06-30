@@ -7,7 +7,7 @@ import dill
 class FullDataImporter(object):
     def __init__(self):
         # import data
-        features = pd.read_csv("../imputation/imputed-large.csv")
+        features = pd.read_csv("../data/imputed.csv")
 
         # Create a boolean mask for likely categorical features
         msk_int = (features.dtypes == "int64").tolist()
@@ -107,11 +107,11 @@ class ElasticNetDataImporter(SelectionDataImporter):
     def __init__(self):
         super(ElasticNetDataImporter, self).__init__()
         self.mask = {
-            "gpa": dill.load(open("../featuremasks/model-elasticnet-gpa.p")),
-            "eviction": dill.load(open("../featuremasks/model-elasticnet-eviction.p")),
-            "grit": dill.load(open("../featuremasks/model-elasticnet-grit.p")),
-            "jobTraining": dill.load(open("../featuremasks/model-elasticnet-jobTraining.p")),
-            "layoff": dill.load(open("../featuremasks/model-elasticnet-layoff.p")),
-            "materialHardship": dill.load(open("../featuremasks/model-elasticnet-materialHardship.p"))
+            "gpa": dill.load(open("../featuremasks/model-elnet-gpa.p")),
+            "eviction": dill.load(open("../featuremasks/model-elnet-eviction.p")),
+            "grit": dill.load(open("../featuremasks/model-elnet-grit.p")),
+            "jobTraining": dill.load(open("../featuremasks/model-elnet-jobTraining.p")),
+            "layoff": dill.load(open("../featuremasks/model-elnet-layoff.p")),
+            "materialHardship": dill.load(open("../featuremasks/model-elnet-materialHardship.p"))
         }
-        self.name = "elasticnet"
+        self.name = "elnet"
